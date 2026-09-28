@@ -1,4 +1,33 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#b6ff3d"><title>KONTENTOR</title><meta name="description" content="ИИ-платформа управления соцсетями"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg"><link rel="stylesheet" href="/style.css"></head><body>
-<div class="app"><aside><div class="brand"><img src="/icon.svg"><div><b>KONTENTOR</b><small>AI SOCIAL OS</small></div></div><nav id="nav"></nav><div class="aside-foot"><span class="dot"></span>Тестовая PWA v0.9</div></aside>
-<main><header><button class="hamb" id="hamb">☰</button><div><p class="eyebrow">ИИ-ПЛАТФОРМА УПРАВЛЕНИЯ СОЦСЕТЯМИ</p><h1 id="title">Главная</h1></div><button id="install" class="ghost" hidden>Установить</button><div class="avatar">S</div></header>
-<section id="view"></section></main></div><div id="toast"></div><script src="/app.js"></script></body></html>
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0F14"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>KONTENTOR — Ваши соцсети. Один интеллект.</title>
+<meta name="description" content="KONTENTOR — ИИ-платформа управления соцсетями">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg"><link rel="stylesheet" href="/style.css">
+</head><body>
+<div class="shell">
+  <aside id="sidebar">
+    <div class="brand-lockup"><img src="/icon.svg" alt=""><div><strong>KONTENTOR</strong><span>AI SOCIAL INTELLIGENCE</span></div></div>
+    <div class="workspace"><div class="workspace-mark">S</div><div><small>РАБОЧЕЕ ПРОСТРАНСТВО</small><b>SULTANOV</b></div><span>⌄</span></div>
+    <nav id="nav"></nav>
+    <div class="sidebar-bottom">
+      <div class="autopilot-mini"><div><span class="status-dot"></span><b>Автопилот</b></div><small>Режим согласования</small></div>
+      <div class="version">KONTENTOR <b>v0.9</b><span>•</span> TEST PWA</div>
+    </div>
+  </aside>
+  <main>
+    <header>
+      <button class="icon-btn menu-btn" id="hamb" aria-label="Меню">☰</button>
+      <div class="head-copy"><div class="crumb">KONTENTOR / <span id="crumb">ОБЗОР</span></div><h1 id="title">Главная</h1></div>
+      <div class="head-actions">
+        <button class="search-box" onclick="T('Поиск появится в production-версии')"><span>⌕</span><span>Поиск</span><kbd>⌘ K</kbd></button>
+        <button class="icon-btn" onclick="T('Новых уведомлений нет')">◌</button>
+        <button id="install" class="install-btn" hidden>Установить</button>
+        <div class="avatar">SS</div>
+      </div>
+    </header>
+    <section id="view"></section>
+  </main>
+</div>
+<div class="mobile-scrim" id="scrim"></div><div id="toast"></div>
+<script src="/app.js"></script></body></html>
