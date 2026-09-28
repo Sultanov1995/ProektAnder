@@ -1,0 +1,19 @@
+{
+  "name": "KONTENTOR",
+  "short_name": "KONTENTOR",
+  "description": "ИИ-платформа управления соцсетями",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070a0d",
+  "theme_color": "#b6ff3d",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
