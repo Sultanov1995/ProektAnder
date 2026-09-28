@@ -6,6 +6,7 @@ RUN mkdir -p /app && tar -xzf /tmp/kontentor-source.tgz -C /app
 WORKDIR /app
 ENV DATABASE_URL=postgresql://placeholder:placeholder@127.0.0.1:5432/kontentor
 RUN npm install
+RUN node -e "const fs=require('fs'),z=require('zlib');const b=z.gzipSync(fs.readFileSync('package-lock.json')).toString('base64');console.log('LOCK_GZ_BEGIN');for(let i=0;i<b.length;i+=120)console.log(b.slice(i,i+120));console.log('LOCK_GZ_END')"
 RUN npm audit --audit-level=high
 RUN npm run db:generate
 RUN npm run build
