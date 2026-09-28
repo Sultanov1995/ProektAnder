@@ -6,7 +6,7 @@ RUN mkdir -p /app && tar -xzf /tmp/kontentor-source.tgz -C /app
 WORKDIR /app
 ENV DATABASE_URL=postgresql://placeholder:placeholder@127.0.0.1:5432/kontentor
 RUN npm install
-RUN npm audit --omit=dev --audit-level=high || true
+RUN npm audit --audit-level=high
 RUN npm run db:generate
 RUN npm run build
 
