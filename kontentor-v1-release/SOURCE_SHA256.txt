@@ -1,8 +1,6 @@
-KONTENTOR v1.0.1 production hardening R9
-source.tgz sha256: 2801599abab4a1ede652d4c16c69ac5a0c5d1f1ff9e6a3a85f572125a2e20388
-security: strict workspace session, DB membership recheck, sessionVersion, 7-day session TTL, auth rate limiting, sanitized healthcheck, HSTS/security headers
-dependencies: exact top-level pins; AWS S3 SDK 3.1142.0; Prisma 7.10.0; deepmerge-ts 8.0.2 override; mysql2 3.24.4 override; npm audit gate
-VK: direct OAuth 2.1 + PKCE; manual token disabled in production
-approved design: variant 2
-approved logo: public/kontentor-logo-approved.png
-approved icon: public/kontentor-icon-approved-tight.png
+KONTENTOR v1.0.2 Railway Origin hotfix R10
+source.tgz sha256: 848e0d07e0f16d3dd74233873508d72065bd24b97e55687a56b22ddc9712405f
+fix: same-origin validation now supports Railway reverse-proxy x-forwarded-host/host while retaining CSRF protection
+protocol: x-forwarded-proto checked when present
+security baseline: v1.0.1 R9 preserved; npm audit gate remains enabled
+approved design/logo unchanged
