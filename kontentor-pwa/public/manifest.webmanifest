@@ -1,13 +1,14 @@
 {
-  "name": "KONTENTOR",
+  "name": "KONTENTOR — AI Social Intelligence",
   "short_name": "KONTENTOR",
-  "description": "ИИ-платформа управления соцсетями",
+  "description": "Ваши соцсети. Один интеллект.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#070a0d",
-  "theme_color": "#b6ff3d",
+  "background_color": "#080B0F",
+  "theme_color": "#0B0F14",
   "lang": "ru",
+  "orientation": "any",
   "icons": [
     {
       "src": "/icon.svg",
