@@ -1,8 +1,9 @@
-KONTENTOR v1.0.1 production hardening R3
-source.tgz sha256: 51be9773ba5100288e71d93b6bfe47e74a649a037defad323a356c0a25530928
+KONTENTOR v1.0.1 production hardening R3 fixed package
+source.tgz sha256: eee1b3a2b17fe140148bf720d1e1923953069ca547b047b698315b5392930739
 security: strict workspace session, DB membership recheck, auth rate limiting, sanitized healthcheck, HSTS/security headers
 dependencies: Prisma 7.10.0 exact; deepmerge-ts 8.0.2 override; mysql2 3.24.4 override; npm audit gate
 VK: direct OAuth 2.1 + PKCE; @vkid/sdk/crypto-js removed; manual token disabled in production
 media: local fallback explicitly excluded from Turbopack filesystem tracing warnings
+package root verified: ./package.json
 approved design: variant 2
 approved logo: public/kontentor-logo-approved.png
