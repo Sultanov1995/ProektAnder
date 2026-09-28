@@ -1,0 +1,5 @@
+KONTENTOR v1.0 production source
+source.tgz sha256: dae015b74edccbd95e2202d7821ce0f519426387d9308f7c5857451561c03ac9
+source.tgz size: 517? bytes see build artifact
+approved design: variant 2
+approved logo: public/kontentor-logo-approved.png
