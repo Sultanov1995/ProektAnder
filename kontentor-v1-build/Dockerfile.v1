@@ -1,0 +1,22 @@
+FROM node:22-bookworm-slim AS builder
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /bootstrap
+COPY . .
+RUN cat v1src-00.b64 v1src-01.b64 v1src-02.b64 v1src-03.b64 v1src-04.b64 v1src-05.b64 v1src-06.b64 v1src-07.b64 v1src-08.b64 v1src-09.b64 v1src-10.b64 v1src-11.b64 v1src-12.b64 v1src-13.b64 v1src-14.b64 v1src-15.b64 v1src-16.b64 v1src-17.b64 v1src-18.b64 v1src-19.b64 v1src-20.b64 | tr -d '\n' | base64 -d > /tmp/kontentor-v1.tgz \
+    && echo "502e5e59c5f549796c9134cb5321eaddf9748e3ce9185fe02cd034805780a5c0  /tmp/kontentor-v1.tgz" | sha256sum -c - \
+    && mkdir -p /app \
+    && tar -xzf /tmp/kontentor-v1.tgz -C /app
+WORKDIR /app
+ENV DATABASE_URL=postgresql://placeholder:placeholder@127.0.0.1:5432/kontentor
+ENV AUTH_SECRET=build-only-secret-not-used-at-runtime-1234567890
+RUN npm install
+RUN npm run self-check
+RUN npm run build
+
+FROM node:22-bookworm-slim AS runner
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app /app
+EXPOSE 3000
+CMD ["sh","-c","npm run db:push && npm start"]
