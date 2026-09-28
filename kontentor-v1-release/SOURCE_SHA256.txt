@@ -1,5 +1,5 @@
-KONTENTOR v1.0 production source
-source.tgz sha256: 957f319c0ec75901578158d8446ab20faa172329ac08c38735028eef8dce39c9
-fix: Next.js manifest icon purpose typing
+KONTENTOR v1.0.1 production hardening
+source.tgz sha256: 6475955226f5edfaee2619d9de347f5a2435988fdefb064d54eb5cbf637e2425
+security: strict workspace session, DB membership recheck, auth rate limiting, sanitized healthcheck, HSTS/security headers
 approved design: variant 2
 approved logo: public/kontentor-logo-approved.png
