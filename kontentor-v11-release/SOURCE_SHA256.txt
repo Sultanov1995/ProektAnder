@@ -1,0 +1,5 @@
+KONTENTOR v1.1.0 — Channel Intelligence production release
+source.tgz sha256: a88f34694a9e4aa1568f56f7ff573d90f74450188fabdbec36f9716f8e24d9c4
+verified: npm audit 0 vulnerabilities; Prisma generate OK; TypeScript OK; Next.js build OK; 56/56 static pages
+feature: per-channel analysis for Telegram, Instagram, VK, YouTube
+approved design/logo unchanged
