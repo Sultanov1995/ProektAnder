@@ -1,0 +1,4 @@
+KONTENTOR v1.1.0 — Channel Intelligence test release
+source.tgz sha256: a88f34694a9e4aa1568f56f7ff573d90f74450188fabdbec36f9716f8e24d9c4
+feature: one-click channel/account analysis after connection
+approved design/logo unchanged
