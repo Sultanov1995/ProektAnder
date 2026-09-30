@@ -1,8 +1,9 @@
-KONTENTOR v1.1.0 — Channel Intelligence + Auto Content R3
-source.tgz sha256: 35f23b26464329f99d5804eb776e378bf375339f11ce2c1f52a085c0c57f9b43
-fix: explicit YouTube recent-video typing for production TypeScript build
-feature: one-click analysis after connecting Telegram / Instagram / VK / YouTube
-autocontent: 5 ready materials for nearest 5 days, saved as review
-telegram: public t.me links normalized to @username
-security: v1.0.2 origin fix + audit gate preserved
+KONTENTOR v1.1.0 — Channel Intelligence + Auto Content R4
+source.tgz sha256: b2df38be2e55f4add80c9e1c978d6271ecf57a42be57d84348ba5dab44f9dce7
+feature: one-click per-channel analysis for Telegram / Instagram / VK / YouTube
+deep mode: OpenAI-driven niche, audience, strengths, risks, growth directions, pillars, formats and 5 ready materials
+fallback mode: works without OPENAI_API_KEY using available metrics, workspace niche and content signals; clearly marks lower confidence
+autocontent: 5 nearest-day materials saved as review, never auto-published
+telegram: accepts @username, numeric chat_id and public t.me links
+security: origin hotfix, audit gate and hardening preserved
 approved design/logo unchanged
