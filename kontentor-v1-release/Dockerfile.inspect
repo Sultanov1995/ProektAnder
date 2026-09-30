@@ -3,5 +3,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends tar gzip && rm 
 WORKDIR /bootstrap
 COPY source.tgz /tmp/kontentor-source.tgz
 RUN mkdir -p /app && tar -xzf /tmp/kontentor-source.tgz -C /app
-RUN node -e "const fs=require('fs'); for (const p of ['lib/openai.ts','lib/channel-analysis.ts','app/api/analysis/channel/route.ts','.env.example']) console.log('@@FILE@@'+p+'@@'+JSON.stringify(fs.readFileSync('/app/'+p,'utf8')))"
+RUN node -e "const fs=require('fs'); const s=fs.readFileSync('/app/lib/openai.ts','utf8'); for(const k of ['export type ChannelIntelligenceAIResult','export async function createChannelIntelligenceWithAI','export async function createWeeklyStrategyWithAI','export async function createStrategyPostDraft','export async function createCrossPlatformVariants']){const i=s.indexOf(k); console.log('@@SEG@@'+k+'@@'+i+'@@'+JSON.stringify(s.slice(Math.max(0,i-1800),Math.min(s.length,i+10000))))}"
 CMD ["sh","-c","sleep infinity"]
