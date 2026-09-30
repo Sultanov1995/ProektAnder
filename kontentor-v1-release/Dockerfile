@@ -3,6 +3,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-cert
 WORKDIR /bootstrap
 COPY source.tgz /tmp/kontentor-source.tgz
 RUN mkdir -p /app && tar -xzf /tmp/kontentor-source.tgz -C /app
+
+# KONTENTOR R4 overlays: Gemini-first text intelligence; approved UI/logo stay inside source.tgz unchanged.
+COPY overlay/ /app/
+RUN node -e "const fs=require('fs'); const p='/app/lib/channel-analysis.ts'; let s=fs.readFileSync(p,'utf8'); s=s.replaceAll('process.env.OPENAI_API_KEY','(process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY)'); s=s.replaceAll('OPENAI_API_KEY не подключён','GEMINI_API_KEY/OPENAI_API_KEY не подключён'); s=s.replaceAll('подключите OpenAI API','подключите Gemini API (или OpenAI как резерв)'); s=s.replaceAll('Без AI API','Без Gemini/OpenAI API'); fs.writeFileSync(p,s); const e='/app/.env.example'; let env=fs.readFileSync(e,'utf8'); if(!env.includes('GEMINI_API_KEY')) env=env.replace('# OpenAI: текст, Radar, AI-стратег и адаптация под площадки.','# Gemini Free Tier — основной провайдер текста, аналитики и автоконтента.\nGEMINI_API_KEY=\"\"\nGEMINI_MODEL=\"gemini-3.8-flash\"\n\n# OpenAI — необязательный резерв для текста; изображения медиа-студии пока используют OpenAI.\n# OpenAI: текст, Radar, AI-стратег и адаптация под площадки.'); fs.writeFileSync(e,env);"
+
 WORKDIR /app
 ENV DATABASE_URL=postgresql://placeholder:placeholder@127.0.0.1:5432/kontentor
 RUN npm install
