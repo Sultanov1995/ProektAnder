@@ -3,14 +3,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends tar gzip && rm 
 WORKDIR /bootstrap
 COPY source.tgz /tmp/kontentor-source.tgz
 RUN mkdir -p /app && tar -xzf /tmp/kontentor-source.tgz -C /app
-RUN echo "===ENV_EXAMPLE===" && cat /app/.env.example
-RUN echo "===OPENAI_TS===" && cat /app/lib/openai.ts
-RUN echo "===MTPROTO_TS===" && cat /app/lib/mtproto.ts
-RUN echo "===MTPROTO_STORE===" && cat /app/lib/mtproto-store.ts
-RUN echo "===TG_SESSION_SCRIPT===" && cat /app/scripts/create-telegram-session.mjs
-RUN echo "===ANALYZE_ROUTE===" && cat /app/app/api/analytics/analyze/route.ts
-RUN echo "===MTPROTO_ROUTE===" && cat /app/app/api/mtproto/stats/route.ts
-RUN echo "===CHANNEL_ANALYSIS===" && cat /app/lib/channel-analysis.ts
-RUN echo "===ANALYSIS_PANEL===" && cat /app/components/ChannelAnalysisPanel.tsx
-RUN echo "===END_INSPECTION==="
+RUN node -e "const fs=require('fs'); for (const p of ['.env.example','lib/openai.ts','lib/mtproto.ts','scripts/create-telegram-session.mjs','app/api/analytics/analyze/route.ts','app/api/mtproto/stats/route.ts','lib/channel-analysis.ts','components/ChannelAnalysisPanel.tsx']) console.log('@@FILE@@'+p+'@@'+JSON.stringify(fs.readFileSync('/app/'+p,'utf8')))"
 CMD ["sh","-c","sleep infinity"]
