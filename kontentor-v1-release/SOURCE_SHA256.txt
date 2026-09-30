@@ -1,6 +1,9 @@
-KONTENTOR v1.0.2 Railway Origin hotfix R10
-source.tgz sha256: 848e0d07e0f16d3dd74233873508d72065bd24b97e55687a56b22ddc9712405f
-fix: same-origin validation now supports Railway reverse-proxy x-forwarded-host/host while retaining CSRF protection
-protocol: x-forwarded-proto checked when present
-security baseline: v1.0.1 R9 preserved; npm audit gate remains enabled
+KONTENTOR v1.1.0 — Channel Intelligence + Auto Content R4
+source.tgz sha256: b2df38be2e55f4add80c9e1c978d6271ecf57a42be57d84348ba5dab44f9dce7
+feature: one-click per-channel analysis for Telegram / Instagram / VK / YouTube
+deep mode: OpenAI-driven niche, audience, strengths, risks, growth directions, pillars, formats and 5 ready materials
+fallback mode: works without OPENAI_API_KEY using available metrics, workspace niche and content signals; clearly marks lower confidence
+autocontent: 5 nearest-day materials saved as review, never auto-published
+telegram: accepts @username, numeric chat_id and public t.me links
+security: origin hotfix, audit gate and hardening preserved
 approved design/logo unchanged
