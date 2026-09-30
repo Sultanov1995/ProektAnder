@@ -1,11 +1,14 @@
-KONTENTOR v1.1.0 — Channel Intelligence
-source.tgz sha256: a88f34694a9e4aa1568f56f7ff573d90f74450188fabdbec36f9716f8e24d9c4
-feature: one-click per-channel analysis after connecting Telegram / Instagram / VK / YouTube
-storage: analysis snapshots persisted in PostgreSQL AnalyticsEvent kind=channel_analysis
-telegram: Bot API baseline + optional MTProto extended stats; accepts @username, numeric chat_id and t.me links
-instagram: 7-day Insights + recent media
-vk: recent wall posts + top posts
-youtube: 28-day channel analytics
-security: preserves v1.0.2 origin fix and v1.0.1 hardening
+KONTENTOR v1.1.0 — Channel Intelligence + Auto Content
+source.tgz sha256: 7883c0a293cd9db9a94385c6415dec382199c4ec25a717beb5d2ac11374946ae
+feature: one-click analysis after connecting Telegram / Instagram / VK / YouTube
+analysis: niche, audience profile, strengths, risks, growth directions, content pillars, recommended formats
+autocontent: generates 5 ready materials for the nearest 5 days and saves them as review publications
+safety: generated materials never auto-publish; user approval is required
+refresh: repeated analysis cancels only old unsent review drafts from the prior analysis
+telegram: accepts @username, numeric chat_id and public t.me links; Bot API baseline + optional MTProto extended stats
+instagram: 14-day Insights + recent media performance
+vk: up to 50 recent wall posts with top-post metrics
+youtube: 28-day Analytics + recent upload titles/descriptions/statistics
+security: preserves v1.0.2 Railway origin fix and v1.0.1 hardening
 approved design: variant 2 unchanged
 approved logo: public/kontentor-logo-approved.png
